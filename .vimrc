@@ -17,12 +17,8 @@ set autoindent
 set smartindent
 set smarttab
 
-"colorscheme pablo
-colorscheme molokai
-let g:molokai_original = 1
-
 set colorcolumn=81
-highlight ColorColumn ctermbg=lightcyan guibg=lightgrey
+highlight ColorColumn ctermbg=0 guibg=lightgrey
 
 filetype on
 filetype indent on
@@ -34,12 +30,26 @@ if has("autocmd")
     au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 endif
 
+" Vim Plugins
 call plug#begin()
     Plug 'preservim/nerdtree'
     Plug 'gnattishness/cscope_maps'
+    Plug 'wellle/targets.vim'
+    Plug 't9md/vim-textmanip'
+    Plug 'tomasr/molokai'
+    Plug 'junegunn/goyo.vim'
 call plug#end()
 
-" Map Space+q to exit Vim
-map <Space>q :q<CR>
-" Map Ctrl+n to toggle NerdTree
+"colorscheme pablo
+colorscheme molokai
+let g:molokai_original = 1
+
+" Map Ctrl-N to toggle NerdTree
 map <C-n> :NERDTreeToggle<CR>
+" Map Space+q to exit vim
+map <Space>q :q<CR>
+" Mappings to move blocks of text
+xmap J <Plug>(textmanip-move-down)
+xmap K <Plug>(textmanip-move-up)
+xmap H <Plug>(textmanip-move-left)
+xmap L <Plug>(textmanip-move-right)
