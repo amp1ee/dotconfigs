@@ -16,6 +16,8 @@ set noswapfile
 set autoindent
 set smartindent
 set smarttab
+set splitright
+set splitbelow
 
 set colorcolumn=81
 highlight ColorColumn ctermbg=0 guibg=lightgrey
@@ -26,6 +28,7 @@ filetype plugin on
 
 if has("autocmd")
     au Filetype python source ~/.vim/ftplugin/python.vim
+    au Filetype c,cpp source ~/.vim/ftplugin/c.vim
     " Save last cursor location
     au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 endif
