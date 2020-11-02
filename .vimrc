@@ -41,11 +41,13 @@ call plug#begin()
     Plug 't9md/vim-textmanip'
     Plug 'tomasr/molokai'
     Plug 'junegunn/goyo.vim'
+    Plug 'luochen1990/rainbow'
 call plug#end()
 
 "colorscheme pablo
 colorscheme molokai
 let g:molokai_original = 1
+let g:rainbow_active = 1
 
 " Map Ctrl-N to toggle NerdTree
 map <C-n> :NERDTreeToggle<CR>
